@@ -1,0 +1,263 @@
+/*css reset*/
+*{box-sizing: border-box;
+margin: 0;
+padding: 0;}
+a {text-decoration: none;
+color: white;}
+ul>li{list-style: none;}
+/*common css*/
+.clearfix::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.layout{width: 1000px;
+margin: 0 auto;}
+.button{
+position: relative;
+top:20px;
+right: -90px;
+background-color:#f7ba3f;
+padding: 5px 10px;
+display: inline-block;
+opacity: 0.8;}
+.button:hover{
+    opacity: 1;
+}
+
+html,body{height: 100%;}
+header nav a{display: inline-block;
+padding: 5px;
+margin: 10PX 5px;
+border-radius: 5px;}
+header .right-nav a:hover{
+    background: #f7ba3f;
+}
+
+body{
+    font-size: 16px/1.5 Arial;
+    background-color: black;
+    color: white;
+}
+header{
+    height: 100%;
+    min-height: 600px;
+    background: red url(https://coverfiles.alphacoders.com/182/18289.jpg)
+      center center no-repeat;
+      background-size: cover;
+      text-align: center;
+      position: relative;
+    }
+header .log{
+    color: #f7ba3f;
+    font-size: 36px;
+    float: left;
+    
+}
+header>nav>ul>li{float: left;
+    margin-left: 5px;
+}
+.right-nav{
+    float: right;
+}
+header nav{height: 50px;}
+.intro{text-align: center;
+position: absolute;
+top: 65%;
+left: 50%;
+transform:translate(-50%,-50%);
+}
+paddin .intro h1{
+    font-size: 40px;
+}
+
+header.intro h2{
+    font-size: 32px;
+    margin-top: 10PX;
+}
+section{text-align: center;
+    }
+    section>h2,p{
+        margin-top: 150px;
+    }
+
+    
+span{font-family: "happy";
+font-size: 80px;}
+.icon{
+  float: left;
+width: 30%;
+margin-left: 30px;
+margin-top: 100px;
+}
+h2{font-size: 36px;
+    
+}
+h3{font-size: 30px;}
+p{margin-top: 30px;}
+main{height: 100%;
+margin-top: 200px;
+}
+
+section .caomao1>h2{margin-top: 150px;}
+.pic{
+    width:300px;
+    height: 300px;
+    margin-left: 25px;
+    opacity:0.7 ;
+}
+.pic:hover{
+    opacity: 1;
+}
+.wulizhi>li{float: left;}
+section figure figcaption{font-size: 20px ;
+font-weight: bold;
+margin-top: 10px;
+}
+section figure p{font-size: 18px;
+margin-top: 5px;}
+.caomao{width: 150px;
+height: 150px;
+border-radius: 50%;
+border: 3px solid gray;}
+dl>dt{font-size: 20px;
+font-weight: bold;}
+section .contain-caomao{
+    position: relative;
+}
+.section2{
+    margin-top: 130px;
+}
+section .contain-caomao li::after{
+    content:"";
+    display: block;
+    clear: both;
+}
+section .contain-caomao li{
+    margin-top: 20px;
+    
+    text-align: right;
+}
+/*section .contain-caomao dl{
+    margin-right: 20px;
+    padding-left: 50px;
+    
+}*/
+section .contain-caomao >li:nth-child(odd) img{
+    float:right;
+    margin-right: 42%;
+    z-index: 200;
+    margin-top: 30px;
+}
+section .contain-caomao >li:nth-child(even) img{
+    float: left;
+  z-index: 200;
+  margin-left: 43%;
+    margin-top: 30px;
+}
+section .contain-caomao >li:nth-child(odd) dl{
+    padding-right: 100px;
+    text-align: right;
+    padding-top: 100px; 
+    
+}
+section .contain-caomao >li:nth-child(even) dl{
+    
+    text-align: left;
+
+    padding-top: 40px;
+}
+dt{color:red;}
+section .contain-caomao>li::after{
+    content: '';
+    display: inline-block;
+height: 80px;
+width: 2px;
+background-color: gray;
+position: absolute;
+left: 505px;
+top:170px ;
+}
+section .contain-caomao>li{
+    position: relative;
+}
+/*section .contain-caomao>li:nth-child(even)::after{
+    content: '';
+    display: inline-block;
+height: 80px;
+width: 2px;
+background-color: gray;
+position: absolute;
+left: 500px;
+top: 0;
+}*/
+.caomao-end{position: relative;
+left: 330px;
+top:80px;
+display: block;
+width: 400px;
+font-size: 36px;
+color:red;}
+.author{
+    margin-top: 150px;
+    height:500px ;
+    width: 1000px;   
+    background: red url(http://file.mumayi.com/forum/201505/06/135847ixcvq75qhkq6h5m0.jpg)center center no-repeat  ;
+    background-size: cover;
+    text-align: center;
+}
+.author img{
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+}
+.author>ul>li{float: left;
+}
+.author>ul{margin-top: 30px;
+padding-left: 500px;}
+.author>ul>li>a{
+    margin-left: 5px;
+    background-color: orange;
+position: relative;
+left:-25px;
+top: -10px;
+}
+section>div>ul>li{
+    font-family: "happy1";
+    margin-left:6px;
+}    
+.section3{
+    position: relative;
+    margin-top: 100px;
+    width: 100%;
+    height: 600px;
+    background: url(https://coverfiles.alphacoders.com/365/36576.jpg)
+   
+
+
+}
+.section3>h2{
+    padding-top: 80px;
+}
+.section3>ul>li>input{
+    width:300px;
+    margin-top: 20px;
+    height: 35px;
+    
+}
+.section3>ul{
+    position: absolute;
+    top: 40%;
+    left: 150px;}
+    
+section>textarea{position: absolute;
+top:43%;
+margin-left: 40px;
+width: 300px;}
+.section3>.button{
+    position: absolute;
+    top: 500px;
+    left: 450px;
+    width: 100px;
+    
+} 
