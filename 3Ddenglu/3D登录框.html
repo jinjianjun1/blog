@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://unpkg.com/font-awesome@v4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/comon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+  <header>
+    <a class="login" href="#"><i class="fa fa-user-secret"></i></a>
+  </header>
+  <main>
+    <div class="flip-modal login">
+      <div class="modal modal-login">
+        <a class="close fa fa-times" href=""></a>
+        <div class="tabs">
+          <a href="#" class="login active">登录</a>
+          <a href="#" class="register">注册</a>
+        </div>
+        <div class="content">
+          <div class="errmsg"></div>
+          <form action="/login" method="POST">
+            <div class="input-file">
+              <i class="fa fa-user-secret"></i>
+              <input name="username" type="text" placeholder="输入用户名">
+            </div>
+            <div class="input-file">
+              <i class="fa fa-lock"></i>
+              <input name="password" type="password" placeholder="输入密码">
+            </div>
+            <div class="input-file">
+              <input type="submit" value="登录">  
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal modal-register">
+            <a class="close fa fa-times" href=""></a>
+            <div class="tabs">
+              <a href="#" class="login ">登录</a>
+              <a href="#" class="register active">注册</a>
+            </div>
+            <div class="content">
+              <div class="errmsg"></div>
+              <form action="/login" method="POST">
+                <div class="input-file">
+                  <i class="fa fa-user-secret"></i>
+                  <input name="username" type="text" placeholder="输入用户名">
+                </div>
+                <div class="input-file">
+                  <i class="fa fa-lock"></i>
+                  <input name="password" type="password" placeholder="输入密码">
+                </div>
+                <div class="input-file">
+                  <i class="fa fa-lock"></i>
+                  <input name="password2" type="password" placeholder="再次输入密码">
+                </div>
+                <div class="input-file">
+                  <input type="submit" value="注册">  
+                </div>
+              </form>  
+      </div>
+    </div>
+  </main>
+</body>
+<script src="javascript/node.js"></script>
+</html>

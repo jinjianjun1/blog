@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<ul class="ct">
+  <li>这里是</li>
+  <li>饥人谷</li>
+  <li>任务班</li>
+</ul>
+<input class="ipt-add-content" placeholder="添加内容"/>
+<button id="btn-add-start">开头添加</button>
+<button id="btn-add-end">结尾添加</button>
+<script>
+var ct= document.getElementsByClassName('ct')[0]
+var newarr=document.getElementsByClassName('ct')[0].getElementsByTagName('li')
+var text=document.querySelector('.ipt-add-content')
+var  startbtn=document.getElementById('btn-add-start')
+var endbtn=document.getElementById('btn-add-end')
+ct.addEventListener('click'.function(e),{
+    console:log(this.target.innerText)
+
+})
+     startbtn.onclick=function(){
+         var newLi=document.createElement("li");
+         newLi.innerHTML=text.value;   
+         ul.insertBefore(newLi,ul.children[0]);
+     }
+     endbtn.onclick=function(){
+         var newLi=document.createElement("li");
+         newLi.innerHTML=text.value;
+         ul.appendChild(newLi);
+     };
+     var ct=document.querySelector('ct')
+         ct.onclick=function(e){
+    if(e.target.classList.contains('li')){
+      console.log(e.target.innerText)
+    }
+  }
+</script>
+</body>
+</html>
