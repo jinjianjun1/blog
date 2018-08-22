@@ -48,7 +48,7 @@ $('.flip-modal').addEventListener('click',function(e){
     $('.flip-modal').classList.add('register')
   }
   if(e.target.classList.contains('close')){
-    $('.flip-modal').style.display='none'
+    $('.flip-modal').classList.remove('show')
   }
 })
 
