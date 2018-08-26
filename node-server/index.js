@@ -93,7 +93,7 @@ var routes = {
     res.end('username='+req.body.username+',password='+req.body.password)
    
   },
-   'getWeather': function(req,res){//getweather前没有加‘/’,加了之后服务器直接崩了
+   '/getWeather': function(req,res){//getweather前没有加‘/’,加了之后服务器直接崩了
        var ret
        if(pathObj.pathname==='hangzhou'){
            ret={
