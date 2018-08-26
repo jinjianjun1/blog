@@ -95,6 +95,8 @@ var routes = {
   },
    '/getWeather': function(req,res){//getweather前没有加‘/’,加了之后服务器直接崩了。
        var ret
+       var pathObj = url.parse(req.url, true)
+
        if(pathObj.pathname==='hangzhou'){
            ret={
                city:'hangzhou',
@@ -164,7 +166,7 @@ function parseBody(body){
   body.split('&').forEach(function(str){
     obj[str.split('=')[0]] = str.split('=')[1]
   })
-  conso.log(obj)
+  console.log(obj)
   return obj
 
 }
