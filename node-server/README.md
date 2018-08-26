@@ -6,7 +6,7 @@ var http = require('http')
 var path = require('path')
 var fs = require('fs')
 var url = require('url')
-
+//↓ 这一部分设置路径，mock接口设置路由
 var routes = {
   '/a': function(req, res){
     res.end(JSON.stringify(req.query))
@@ -27,19 +27,19 @@ var routes = {
 
 }
 
-
+//↓ 程序入口
 var server = http.createServer(function(req, res){
   routePath(req, res)
 })
 
-server.listen(8080)
-console.log('visit http://localhost:8080' )
+server.listen(9000)
+console.log('visit http://localhost:9000' )
 
 
 function routePath(req, res){
-  var pathObj = url.parse(req.url, true)
+  var pathObj = url.parse(req.url, true) //解析URL，得到pathname即路由
  
-  var handleFn = routes[pathObj.pathname]
+  var handleFn = routes[pathObj.pathname] //与routes里的值进行匹配，有则调用routes没有就为undefined
   if(handleFn){
     req.query = pathObj.query
 
@@ -54,7 +54,7 @@ function routePath(req, res){
     })
     
   }else {
-    sampleRoot(path.resolve(__dirname, 'sample'), req, res)
+    sampleRoot(path.resolve(__dirname, 'sample'), req, res)//静态文件的路径
   }
 }
 
@@ -73,7 +73,7 @@ function sampleRoot(samplePath, req, res){
   })
 
 }
-
+将数据包装成对象
 function parseBody(body){
   console.log(body)
   var obj = {}
