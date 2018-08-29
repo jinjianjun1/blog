@@ -1,11 +1,13 @@
-
+var musicList=[]
 var currentIndex=0
 var audio= new Audio()
 var clock
 audio.autoplay=true
 
 getMusicList(function(list){//将参数传递给这里的function
+    musicList=list
     loadMusic(list[currentIndex])//通过改变currentIndex来实现播放第几首歌的功能
+    generateList(list)
 })
 function $(selector){
     return document.querySelector(selector)
@@ -33,16 +35,40 @@ audio.onplay=function(){
 $('.musicbox .play').onclick=function(){
     
   if(audio.paused){
-      console.log(this)
+     // console.log(this)
     audio.play()
-   this.querySelector('.fa').classList.remove('fa-pause')
-   this.querySelector('.fa').classList.add('fa-play')
+   this.querySelector('.fa').classList.remove('fa-play')
+   this.querySelector('.fa').classList.add('fa-pause')
   }else{
     audio.pause()
-    this.querySelector('.fa').classList.remove('fa-play')
-    this.querySelector('.fa').classList.add('fa-pause')}
+    this.querySelector('.fa').classList.remove('fa-pause')
+    this.querySelector('.fa').classList.add('fa-play')}
 }
 
+$('.musicbox .fa-backward').onclick=function(){
+    currentIndex=(  musicList.length + --currentIndex)%musicList.length
+    console.log(currentIndex)
+    loadMusic(musicList[currentIndex])
+}
+
+
+$('.musicbox .fa-forward').onclick=function(){
+    currentIndex=(++currentIndex)%musicList.length
+    console.log(currentIndex)
+    loadMusic(musicList[currentIndex])
+}
+
+$('.musicbox .bar').onclick=function(e){
+    var percent=e.offsetX/parseInt(getComputedStyle(this).width)
+    // parseInt() 函数解析一个字符串参数，并返回一个指定基数的整数(数学系统的基础)
+   console.log(percent)
+   audio.currentTime=audio.duration*percent
+
+}
+audio.onended=function(){
+    currentIndex=(++currentIndex)%musicList.length//与下一首执行相同的事情
+   loadMusic(musicList[currentIndex])
+}
 
 audio.onpause=function(){
     clearInterval(clock)
@@ -67,7 +93,10 @@ function loadMusic(musicObj){
     console.log('begin play', musicObj)
     $('.musicbox .title').innerText=musicObj.title
     $('.musicbox .auther').innerText=musicObj.auther
-
+    $('.cover').style.backgroundImage='url('+musicObj.img+')'
     audio.src=musicObj.src
     
+}
+function generateList(list){
+    $('.musicbox .list').innerText=musicObj.title
 }
