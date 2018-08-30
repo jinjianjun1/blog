@@ -75,7 +75,7 @@ audio.onpause=function(){
 }//只要音乐一停，包括暂停、下一曲时就会触发，便于重新计算currentTime
 function getMusicList(callback){
 var xhr = new XMLHttpRequest()
-xhr.open('GET','./music.json',true)
+xhr.open('GET','.//music.json',true)
 xhr.onload=function(){
   if((xhr.status>=200&&xhr.status<300)||xhr.status===304){
       console.log(JSON.parse(this.responseText))
