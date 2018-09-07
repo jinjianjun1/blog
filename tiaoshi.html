@@ -154,6 +154,9 @@ for (var i = 0; i < 10; i ++) {
       this.parentElement.nextElementSibling.querySelectorAll('.pannel')[index].classList.add('active')
     })
   })
+  $('.contain').on('click',function(){
+  var toogle=$(this).find('.fa').toogleClass('fa-pause').toogleClass('fa-play')
+})
   </script>
 </body>
 </html>
