@@ -159,4 +159,111 @@ for (var i = 0; i < 10; i ++) {
 })
   </script>
 </body>
+<frame>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+    </head>
+    <body>
+      <div class="blank">
+        <h1>computer</h1>
+      </div>
+      <div class="contain">
+        <div class="border">
+          <div class="product">
+            <p class="name">外星人</p>
+            <h3 class="price">20000￥</h3>
+            <a href="#" class="remove">删除</a>
+          </div>
+          <div class="product">
+            <p class="name">Mac</p>
+            <h3 class="price">12000￥</h3>
+            <a href="#" class="remove">删除</a>
+          </div>
+          <div class="product">
+            <p class="name">联想</p>
+            <h3 class="price">8000￥</h3>
+            <a href="#" class="remove">删除</a>
+          </div>  
+        </div>
+      </div>
+      <div class="btn-contain">
+        <a href="#" class="add  btn">添加</a>
+        <a href="#" class="change btn">编辑</a>
+      </div>
+      <style>
+        body .blank{
+          margin:0 auto;
+          width: 900px;
+          text-align: left;
+        } 
+        body .contain{
+          width: 900px;
+          margin: 0 auto;
+        }
+       
+        .product h3{
+            display: inline-block;
+        }
+        .product  a{
+          display: inline-block;
+          margin:  0  auto;
+          margin-left: 20px;
+          position: absolute;
+          left: 85px;
+          text-decoration: none;
+          border: 1px  #ddd solid;
+          padding: 5px;
+          color: red;
+        }
+        body .contain .product{
+          float: left;
+          width: 250px;
+          border:1px #ddd solid;
+          padding: 10px;
+          margin-right: 28px;
+          margin-top: 28px;
+          position: relative;
+        }
+        body .contain::after{
+          content: '';
+          display: block;
+          clear: both;
+        }
+        .btn-contain{
+          width: 900px;
+          margin: 0 auto;
+          text-align: left;
+          margin-top: 50px;
+        }
+        .btn-contain .btn{
+          text-decoration: none;
+          color: red;
+          border:1px #ddd solid;
+          padding: 5px;
+          border-radius: 3px;
+          margin-right: 30px;
+        }
+        .cover{
+            background-color: aquamarine;
+            opacity: 0.5;
+        }
+      </style>
+      <script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.js"></script>
+      <script>
+      $('.btn-contain .add').on('click',function(){
+        $('.border').eq(0).clone().appendTo('.contain')
+      })
+      $('.contain').on('click','.remove',function(){
+          $(this).parent().remove()
+      })
+      $('.btn-contain .change').on('click',function(){
+          $('.product').toggleClass('cover')
+      })
+      </script>
+    </body>
+    </html>
+</frame>>
 </html>

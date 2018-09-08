@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/*便于做一些宽度的计算 */
+}/*css reset*/
+body{
+  font-size: 12px;
+  line-height: 1.2;
+  background-color: #fff;
+  position: relative;
+}
+html,body{
+  height: 100%;
+}
+main{
+  height: calc(100vh - 50px);
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;/*在手机上滚动会有弹性*/
+}
+main>section{
+  display: none;
+}
+main>section:first-child{
+  display: block;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%; 
+  display: flex;
+  border-top: 1px #ddd solid;
+}
+
+footer>div{
+  flex: 1;
+  text-align: center;
+}
+footer>div>span{
+  display: block;
+  padding: 5px;
+}
+footer .active{
+  color: #ff5722
+}
