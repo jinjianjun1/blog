@@ -42,3 +42,46 @@ footer>div>span{
 footer .active{
   color: #ff5722
 }
+.item{
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.item>a{
+  display: block;
+  display: flex;
+  text-decoration: none;
+}
+.item .cover,
+.item .cover img{
+  width: 70px;
+}
+.item .detail{
+  flex: 1;
+  padding-left: 10px;
+}
+.item .detail h2{
+  font-size: 16px; 
+  color: black;
+}
+.item .detail .extra{
+  color: #999;
+  margin-top: 4px;
+} 
+.item .detail .score{
+  color: #ff5722
+}
+.loading{
+  text-align: center;
+  padding: 5px;
+ /* display: none;*/
+}
+
+.loading .iconfont{
+  display: inline-block;
+  animation: 1s rotate linear infinite ;
+}
+@keyframes rotate{
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+}
