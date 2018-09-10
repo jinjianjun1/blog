@@ -14,14 +14,16 @@ html,body{
 }
 main{
   height: calc(100vh - 50px);
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;/*在手机上滚动会有弹性*/
 }
 main>section{
   display: none;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;/*在手机上滚动会有弹性*/
+  height: calc(100vh - 50px);
 }
 main>section:first-child{
   display: block;
+  
 }
 footer{
   position: absolute;
