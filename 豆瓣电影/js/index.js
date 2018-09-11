@@ -54,7 +54,7 @@
 //     <div class="item">
 //     <a href="#">
 //       <div class="cover">
-//         <img src="http://img7.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" alt="">
+//         <img src="https://img7.doubanio.com/view/photo/s_ratio_poster/public/p480747492.jpg" alt="">
 //       </div>
 //       <div class="detail">
 //         <h2>霸王别姬</h2>
@@ -138,7 +138,7 @@ var top250={
     _this.isloading=true
     _this.$container.find('.isloading').show()
     $.ajax({
-    url:'http:api.douban.com/v2/movie/top250',
+    url:'https:api.douban.com/v2/movie/top250',
     type:'GET',
     data:{
     start:_this.index||0
@@ -235,7 +235,7 @@ var us={
      _this.isloading=true
      _this.$container.find('.isloading').show()
      $.ajax({
-     url:'http:api.douban.com/v2/movie/us_box',
+     url:'https:api.douban.com/v2/movie/us_box',
      type:'GET',
     //  data:{
     //  start:_this.index||0
@@ -335,7 +335,7 @@ var search={
     //  _this.isloading=true
      _this.$container.find('.isloading').show()
      $.ajax({
-     url:'http:api.douban.com/v2/movie/search',
+     url:'https:api.douban.com/v2/movie/search',
      data:{q:_this.keyword},
      type:'GET',
     //  data:{
