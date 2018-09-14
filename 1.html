@@ -2,207 +2,326 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="description" content="代理" />
-  <meta charset="utf-8">
-  <title>代理</title>
-  <style>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>waterfull-lazyload-ajax demo</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	html,body,ul,li,p,div{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	ul,li{
+		list-style: none;
+	}
 
-* {
-  box-sizing: border-box;
-}
-body, ul, li, p{
-  margin: 0;
-  padding: 0;
-}
-ol,ul{
-  list-style: none;
-}  
-body {
-  font: 12px/150% Arial,Verdana,"\5b8b\4f53";
-  color: #666;
-}
-a {
-  color: #666;
-  text-decoration: none;
-}
+  .wrap{
+  	width: 900px;
+		margin: 0 auto;
+  }
 
-.clearfix:after{
-  content:'';
-  display: block;
-  clear: both;
-}
-.clearfix{
-   *zoom: 1;
-   }
-
-.layout{
-	width: 702px;
-	margin: 10px auto;
-}
-
-.btn{
-  display: inline-block;
-  border: 1px solid #c81623;
-  color: #c81623;
-  padding: 10px 15px;
-  border-radius: 3px;
-  text-align: center;
-  background: #fff;
-  cursor: pointer;
-}
-
-
-
- .prod{
-  position: relative;
-  float: left;
-  width: 220px;
-  padding: 10px 20px;
-  margin-left: 20px;
-  margin-top: 20px;
-  text-align: center;
-  border: 1px solid #eee;
-  background: #fff;
-}
- .prod img{
-   width: 100%;
-   height: 100%;
- }
- .cover{
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: rgba(0,0,0, 0.3);
-  transition: all 0.3s;
-  opacity: 0;
-}
- .cover .btn{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
- .prod.hover .cover{
-  opacity: 1;
-}
- .prod-ct{
-  margin-left: -20px;
-  margin-top: -20px;
-}
- .prod-name{
-  height: 36px;
-  text-align: left;
-  font-weight: normal;
-  font-size: 12px;
-  color: #666;
-}
- .prod-price{
-  text-align: left;
-  color: #c81623;
-}
-.btn{
-  margin-top: 20px;
-  margin-right: 20px;
-}
-
-  </style>
+	.clearfix:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	#pic-ct{
+		position: relative;
+	}
+	#pic-ct .item{
+		position: absolute;
+		padding: 0 0 10px 0;
+		width: 280px;
+		margin: 10px;
+		border: 1px solid #DFDFDF;
+		background: #FFF;
+		opacity: 0;
+		transition: all .8s;
+	}
+	#pic-ct .item img{
+	    margin: 10px;
+	    width: 260px;
+	}
+	#pic-ct .item .header{
+		height: 25px;
+	    margin: 0 12px;
+	    border-bottom: 1px solid #DBDBDB;
+	}
+	#pic-ct .desp{
+		font-size: 12px;
+		line-height: 1.8;
+	  margin: 10px 15px 0;
+	  color: #777371;
+	}
+	#load{
+		visibility: hidden;
+		height: 20px;
+	}
+	.hide{
+		display: none;
+	}
+</style>
 </head>
 <body>
+	 <div class="wrap">
+    <div class="ct-waterfall">
+    	<ul id="pic-ct" class="clearfix">
+    		<!--<li class="item">
+    			<a href="#" class="link">
+    				<img src="http://s.img.mix.sina.com.cn/auto/resize?img=http%3A%2F%2Fwww.sinaimg.cn%2Fdy%2Fslidenews%2F5_img%2F2016_09%2F453_75615_657883.jpg&size=250_0" alt="">
+    			</a>
+    			<h4 class="header">标题</h4>
+    			<p class="desp">
+    				当地时间2016年3月1日，在东部与亲俄武装作战中受伤的乌克兰士兵接受海豚治疗。
+    			</p>
+    		</li>-->
 
+				<!-- 用于计算 item 宽度和列数，但不展示出来-->
+				<li class="item hide"></li>
+    	</ul>
+    	<div id="load">我是看不见的</div>
+    </div>
+	</div>
+</body>
 
-<div class="layout">
-	<h1>珠宝首饰</h1>
-	<ul class="prod-ct clearfix">
-	 <li class="prod">
-	   <div class="cover"><a class="btn  action-delete" href="">删除</a></div>
-	   <a href="#">
-	     <img src="//picsum.photos/200/200/?image=1" alt="">
-	     <div class="prod-name">藏美千足金</div>
-	     <div class="prod-price">￥1699.00</div>
-	   </a>
-	 </li>
-	 <li class="prod">
-	   <div class="cover"><a class="btn  action-delete" href="">删除</a></div>
-	   <a href="#">
-	     <img src="//picsum.photos/200/200/?image=2" alt="">
-	     <div class="prod-name">和田玉</div>
-	     <div class="prod-price">￥1699.00</div>
-	   </a>
-	 </li>
-	 <li class="prod">
-	   <div class="cover"><a class="btn  action-delete" href="">删除</a></div>
-	   <a href="#">
-	     <img src="//picsum.photos/200/200/?image=3" alt="">
-	     <div class="prod-name">路路通吊坠</div>
-	     <div class="prod-price">￥1699.00</div>
-	   </a>
-	 </li>
+<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.min.js"></script>
 
-	</ul>
-
-
-	<a href="#" class="btn btn-add">添加</a><a href="#" class="btn btn-edit">编辑</a>
-</div>
-
-
-
-
-<script src="http://apps.bdimg.com/libs/jquery/1.9.1/jquery.js"></script>
 <script>
 
 
-function getProdHtml(prod){
-	var html = '';
-	html += '<li class="prod">';
-	html +=   '<div class="cover"><a class="btn action-delete" href="#">删除</a></div>'
-	html +=    '<a href="#">'
-	html +=      '<img src="'+prod.img+'" alt="">'
-	html +=      '<div class="prod-name">'+prod.name+'</div>'
-	html +=      '<div class="prod-price">'+prod.price+'</div>'
-	html +=    '</a>'
-	html += '</li>';
-	return html;
-}
+//1. 获取数据
+//2. 把数据变为 Dom，通过瀑布流的方式放到页面上
+//3. 当滚动到底部的时候， --》 1
 
-function getData(){
- var results = []
- for(var i = 0; i<3; i++){
-   var rand = Math.floor(Math.random()*100)
-   var product = 	{
-		img: '//picsum.photos/200/200/?image='+rand,
-		name: '珂兰 黄金手 猴哥款',
-		price: '￥'+rand
-	} 
-   results.push(product)
- }
-  
-  return results
+let curPage = 1
+let perPageCount = 20
+let colSumHeight = []
+let nodeWidth = $('.item').outerWidth(true)
+let colNum = parseInt($('#pic-ct').width()/nodeWidth)
+for(var i = 0; i < colNum.length; i++){
+	colSumHeight[i] = 0
 }
+for(var i=0; i<colNum; i++){
+	colSumHeight.push(0)
+}
+console.log(nodeWidth,colNum)
 
-$('.btn-add').on('click', function(e){
-	e.preventDefault();
-    $('.prod').removeClass('hover')
-    var products = getData()
-	$.each(products, function(idx, prod){
-		var html = getProdHtml(prod)
-		$('.prod-ct').append(html)
+var isDataArrive = true
+
+start()
+
+function start(){
+
+	getData(function(newsList){
+		console.log(newsList)
+		isDataArrive = true
+		$(newsList).each(function(idx, news){
+			var $node = getNode(news)
+			$node.find('img').load(function(){
+				$('#pic-ct').append($node)
+				console.log($node, 'loaded...')
+				waterFallPlace($node)
+			})
+		})
 	})
+	isDataArrive = false	
+}
+
+
+
+$(window).scroll(function(){
+	if(!isDataArrive) return
+		
+	if(isVisible($('#load'))){
+		start()
+	}
 })
 
 
-$('.btn-edit').on('click', function(e){
-	e.preventDefault();
-    $('.prod').toggleClass('hover')
-})
+function getData(callback){
+		$.ajax({
+			url: 'http://platform.sina.com.cn/slide/album_tech',
+			dataType: 'jsonp',   
+			jsonp:"jsoncallback",
+			data: {
+				app_key: '1271687855',
+				num: perPageCount,
+				page: curPage
+			}
+		}).done(function(ret){
+			if(ret && ret.status && ret.status.code === "0"){
+				callback(ret.data);   //如果数据没问题，那么生成节点并摆放好位置
+				curPage++
+			}else{
+				console.log('get error data');
+			}
+		});
+}
 
-$('.prod-ct').on('click', '.action-delete', function(e){
-  e.preventDefault()
-  $(this).parents('.prod').remove()
-})
+
+function getNode(item){
+	var tpl = ''
+		tpl += '<li class="item">';
+		tpl += ' <a href="'+ item.url +'" class="link"><img src="' + item.img_url + '" alt=""></a>';
+		tpl += ' <h4 class="header">'+ item.short_name +'</h4>';
+		tpl += '<p class="desp">'+item.short_intro+'</p>';
+		tpl += '</li>';
+	
+	return $(tpl)
+}
+
+function waterFallPlace($node){
+
+		var idx = 0,
+			  minSumHeight = colSumHeight[0];
+
+		for(var i=0;i<colSumHeight.length; i++){
+			if(colSumHeight[i] < minSumHeight){
+				idx = i;
+                minSumHeight = colSumHeight[i];
+                console.log(minSumHeight)
+
+			}
+		}
+
+		$node.css({
+			left: nodeWidth*idx,
+			top: minSumHeight,
+			opacity: 1
+		});
+
+		colSumHeight[idx] = $node.outerHeight(true) + colSumHeight[idx];
+		$('#pic-ct').height(Math.max.apply(null,colSumHeight));
+
+}
+
+	function isVisible($el){
+	  var scrollH = $(window).scrollTop(),
+	  	  winH = $(window).height(),
+	  	  top = $el.offset().top;
+
+  	  if(top < winH + scrollH){
+        console.log('maye')
+
+  	  	return true;
+  	  }else{
+  	  	return false;
+  	  }
+	}
+
+
+
+
+	
+
+/*
+
+
+
+	var clock;
+	$(window).on('scroll', function(){
+    //用户鼠标滚轮滚动一次，有多次事件响应。下面的 setTimeout 主要是为性能考虑，只在最后一次事件响应的时候执行 checkshow
+    if(clock){
+      clearTimeout(clock);
+    }
+    clock = setTimeout(function(){
+      checkShow();
+    }, 100);
+	});
+
+  // 用户第一次打开页面，还未滚动窗口的时候需要执行一次 checkShow
+	checkShow();
+
+*/
+
+	// function checkShow(){
+	// 	if(isShow($('#load'))){
+	// 		loadAndPlace();
+	// 	}
+	// }
+
+	// function isShow($el){
+	//   var scrollH = $(window).scrollTop(),
+	//   	  winH = $(window).height(),
+	//   	  top = $el.offset().top;
+
+  	//   if(top < winH + scrollH){
+  	//   	return true;
+  	//   }else{
+  	//   	return false;
+  	//   }
+	// }
+
+
+
+// 获取数据，并且摆放位置
+
+//   var curPage = 1,
+// 		  perPageCount = 9;
+
+// 	function loadAndPlace(){
+// 		$.ajax({
+// 			url: 'http://platform.sina.com.cn/slide/album_tech',
+//             type:'get',
+//             dataType: 'jsonp',   //这里使用了新浪新闻的 jsonp 接口，大家可以直接看数据， 如： http://platform.sina.com.cn/slide/album_tech?jsoncallback=func&app_key=1271687855&num=3&page=4
+// 			jsonp:"jsoncallback",
+// 			data: {
+// 				app_key: '1271687855',
+// 				num: perPageCount,
+// 				page: curPage
+// 			}
+// 		}).done(function(ret){
+// 			if(ret && ret.status && ret.status.code === "0"){
+// 				place(ret.data);   //如果数据没问题，那么生成节点并摆放好位置
+// 				curPage++
+// 			}else{
+// 				console.log('get error data');
+// 			}
+// 		});
+// 	} 
+
+
+
+// function place(nodeList){
+// 	console.log(nodeList);
+// 	$.each(nodeList, function(index,item){
+// 		var $node = getNode(item)
+// 		$node.find('img').load(function(){
+// 			$('#pic-ct').append($node)
+// 			waterFallPlace($node)
+// 		})
+// 	})
+// }
+
+
+
+// 瀑布流
+
+//var colSumHeight = [],
+		// nodeWidth = $('.item').outerWidth(true),
+		// colNum = parseInt($('#pic-ct').width()/nodeWidth);
+
+
+
+
+
+
+// function getNode(item){
+// 	var tpl = ''
+// 		tpl += '<li class="item">';
+// 		tpl += ' <a href="'+ item.url +'" class="link"><img src="' + item.img_url + '" alt=""></a>';
+// 		tpl += ' <h4 class="header">'+ item.short_name +'</h4>';
+// 		tpl += '<p class="desp">'+item.short_intro+'</p>';
+// 		tpl += '</li>';
+	
+// 	return $(tpl)
+// } 
+
 
 
 </script>
-</body>
+
 </html>
