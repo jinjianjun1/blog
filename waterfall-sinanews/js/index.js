@@ -3,12 +3,10 @@ let perPageCount = 20
 let colArrayheight = []
 let nodeWidth = $('.item').outerWidth(true)
 let colCount = Math.floor(($('#pic-ct').width()/nodeWidth))
-for(var i=0;i<colCount.length;i++){
-  colArrayheight[i]=0
-}
 
-for(var o=0;i<colCount;i++){
+for(var i=0;i<colCount;i++){
     colArrayheight.push(0)
+    //console.log(colArrayheight)
 }
 
 let isDataArrive= true
