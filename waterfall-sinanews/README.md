@@ -1,6 +1,6 @@
 ## waterfall-sinanews
 预览地址
-https://jinjianjun1.github.io/blog/%E6%87%92%E5%8A%A0%E8%BD%BD%E5%92%8C%E7%80%91%E5%B8%83%E6%B5%81%E5%B8%83%E5%B1%80/%E7%80%91%E5%B8%83%E6%B5%81%E6%96%B0%E9%97%BB%E5%B8%83%E5%B1%80.html
+https://jinjianjun1.github.io/blog/waterfall-sinanews/index.html
 ##懒加载原理
 一开始的时候并不展示所有的图片，只展示用户可以看到
 在图片放置在html上的位置上放上相同的图片，即页面载入时只需要发送一条图片的请求，
