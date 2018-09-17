@@ -1,0 +1,203 @@
+html,body,section{
+  height: 100%;
+  overflow: hidden;
+}
+.layout{
+  margin: 0 auto;
+  width: 600px;
+}
+@media (min-width:700px){
+  .layout{
+    width: 600px;
+  }
+}
+@media (min-width:900px){
+  .layout{
+    width: 800px;
+  }
+}@media (min-width:1000px){
+  .layout{
+    width: 900px;
+  }
+}@media (min-width:1200px){
+  .layout{
+    width: 1100px;
+  }
+}
+#page-cover{
+  display: none;
+}
+.bg{
+  position: absolute;
+  z-index: -1;
+  left: -10px;
+  top: -10px;
+  bottom: -10px;
+  right: -10px;
+  background: url(http://file02.16sucai.com/web/2014/12/13212Va7-13.jpg);
+  background-size: cover;
+  filter: blur(4px)
+}
+.bg::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.4)
+}
+main{
+  padding-top: 12vh;
+  height:calc( 100% - 24vh );
+}
+footer{
+  height: 24vh;
+}
+main .aside{
+  float: left;
+}
+main .aside>figure{
+  width: 46vh;
+  height: 46vh;
+  background-image: url(http://file02.16sucai.com/web/2014/12/13212W1Y-14.jpg);
+  background-size: cover;
+  position: center center;
+}
+main::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+
+main .aside .action{
+  display: flex;
+  margin-top: 4vh;
+}
+main .aside .iconfont{
+  flex: 1;
+  text-align: center;
+  font-size: 5vh;
+  color: rgba(255, 255, 255, 0.4);
+  transition: color .4s;
+  cursor: pointer;
+}
+main .aside .iconfont:hover{
+  color: #fff;
+}
+main .detail{
+  margin-left: 56vh;
+    color: #fff;
+  }
+main .detail .tag{
+  font-size: 2vh;
+  margin-top: .4em .8em;
+  background: #2e6eec;
+}
+main .detail h1{
+  font-size: 6vh;
+  margin-top: 2vh;
+}
+main .icons{
+  display: flex;
+  font-size: 3vh;
+  margin-top: 12vh;
+}
+
+main .icons .iconfont{
+  font-size: 3vh;
+  margin-right: 1vh;
+  flex: 1;
+}
+main .area-bar{
+  margin-top: 10vh;
+  display: flex;
+  align-items: center;
+}
+main .area-bar .bar{
+  position:relative;
+  flex: 1;
+  height: .8vh;
+  border-radius: .2vh;
+  background: rgba(255, 255, 255, 0.4);
+}
+main .area-bar .current-time{
+  width: 3vh;
+  font-size: 2vh;
+  margin-left: 1vh;
+}
+main .area-bar .bar-progress{
+  position: absolute;
+  height: .8vh;
+  width: 10%;
+  background: #fff;
+  border-radius: .2vh;
+}
+
+main .auther{
+  font-size: 3vh;
+  margin-top:2vh;
+}
+main .lyric{
+  font-size: 2vh;
+  margin-top: 2vh;
+  color: rgba(255, 255, 255, 0.4)
+}
+
+footer{
+  height: 24vh;
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0px -.25vh .25vh .25vh rgba(255, 255, 255, 0.4)
+}
+footer .box{
+  position: relative;
+}
+
+footer .iconfont{
+  position: absolute;
+  top: 4vh;
+  font-size: 6vh;
+  color: rgba(255,255,255,0.4);
+  opacity:0;
+  transition: all .4s;
+  cursor: pointer;
+}
+footer:hover .iconfont{
+  opacity: 1;
+}
+footer .iconfont:hover{
+  color: rgba(153, 13, 13, 0.8)
+}
+footer .icon-left{
+  left: -8vh;
+}
+footer .icon-right{
+  right: -8vh;
+}
+
+footer li .cover{
+  height: 16vh;
+  background-size: cover;
+  background-position: center center;
+}
+footer  h3{
+  font-size: 2vh;
+  color: rgba(255,255,255, o.6)
+}
+
+footer>ul::after{
+ content: '';
+ display: block;
+ clear:both,
+}
+footer ul{
+  display: flex;
+}
+footer ul>li{
+  float: left;
+  flex: 1;
+  margin-left: 3vh;
+  margin-top:3vh;
+  text-align: center;
+}
