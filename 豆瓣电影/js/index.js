@@ -39,7 +39,7 @@ var top250={
     _this.isloading=true
     _this.$container.find('.isloading').show()
     $.ajax({
-    url:'https//api.douban.com/v2/movie/top250',
+    url:'https://api.douban.com/v2/movie/top250',
     type:'GET',
     data:{
     start:_this.index||0
