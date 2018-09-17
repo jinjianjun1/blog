@@ -13,7 +13,7 @@
 //   if(isloading) return
 //   isloading= true
 // $.ajax({
-//   url:'http:api.douban.com/v2/movie/top250',
+//   url:'https://api.douban.com/v2/movie/top250',
 //   type:'GET',
 //   data:{
 //     start:index,
@@ -138,7 +138,7 @@ var top250={
     _this.isloading=true
     _this.$container.find('.isloading').show()
     $.ajax({
-    url:'https://api.douban.com/v2/movie/top250',
+    url:'https//douban.com/api/v2/movie/top250',
     type:'GET',
     data:{
     start:_this.index||0
@@ -235,7 +235,7 @@ var us={
      _this.isloading=true
      _this.$container.find('.isloading').show()
      $.ajax({
-     url:'https://api.douban.com/v2/movie/us_box',
+     url:'https://douban.com/api/v2/movie/us_box',
      type:'GET',
     //  data:{
     //  start:_this.index||0
@@ -335,7 +335,7 @@ var search={
     //  _this.isloading=true
      _this.$container.find('.isloading').show()
      $.ajax({
-     url:'https://api.douban.com/v2/movie/search',
+     url:'https://douban.com/api/v2/movie/search',
      data:{q:_this.keyword},
      type:'GET',
     //  data:{
