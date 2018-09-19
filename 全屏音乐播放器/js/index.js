@@ -55,7 +55,7 @@ var Footer={
       },400,function(){
         _this.isAnimate=false
         _this.isToEnd=false
-        console.log(parseFloat(_this.$ul.css('left')),parseFloat(_this.$ul.width()))
+        //console.log(parseFloat(_this.$ul.css('left')),parseFloat(_this.$ul.width()))
         if(parseFloat(_this.$ul.css('left'))>=0){
           _this.isStart=true
         }
@@ -102,8 +102,9 @@ var Footer={
 
 var Fm={
   init:function(){
-    this.bind()
     this.$container=$('#page-music')
+    this.bind()
+
     this.audio= new Audio()
     this.audio.autoplay=true//这样的话只需修改src就可以播放音乐
 
@@ -117,16 +118,16 @@ var Fm={
         _this.setMusic()
       })
     }) 
-    //  console.log(this) 
-    //  console.log(this.$container)
-    // this.$container.find('.btn-play').on('click',function(){
-    //  var $btn =$(this)
-    //   if($btn.hasClass('icon-play')){
-    //     $btn.removeClass('icon-play').addClass('icon-pause')
-    //   }else{
-    //     $btn.removeClass('icon-pause').addClass('icon-play')
-    //   }
-    // })
+      console.log(this) 
+     //console.log(this.$container)
+    this.$container.find('.btn-play').on('click',function(){
+     var $btn =$(this)
+      if($btn.hasClass('icon-play')){
+        $btn.removeClass('icon-play').addClass('icon-pause')
+      }else{
+        $btn.removeClass('icon-pause').addClass('icon-play')
+      }
+    })
   },
   loadMusic(callback){
     var _this =this
@@ -140,8 +141,9 @@ var Fm={
     })
   },
   setMusic(){
-    console.log(this.$container)
+    //console.log(this.$container)
     this.audio.src=this.song.url
+    //console.log(this)
     $('.bg').css('background-image','url('+this.song.picture+')')
     this.$container.find('.aside figure').css('background-image','url('+this.song.picture+')')
     this.$container.find('.detail h1').text(this.song.title)
