@@ -150,8 +150,16 @@ footer{
   background: rgba(255,255,255,0.2);
   box-shadow: 0px -.25vh .25vh .25vh rgba(255, 255, 255, 0.4)
 }
+.active{
+  box-shadow: 0px -.25vh .25vh .25vh rgba(255, 255, 255, 0.4)
+
+}
+footer .layout{
+  position: relative;
+}
 footer .box{
   position: relative;
+  overflow: hidden;
 }
 
 footer .iconfont{
@@ -162,6 +170,11 @@ footer .iconfont{
   opacity:0;
   transition: all .4s;
   cursor: pointer;
+}
+
+footer .box{
+  height: 24vh;
+  position: relative;
 }
 footer:hover .iconfont{
   opacity: 1;
@@ -180,6 +193,7 @@ footer li .cover{
   height: 16vh;
   background-size: cover;
   background-position: center center;
+  width: 18vh;
 }
 footer  h3{
   font-size: 2vh;
@@ -193,6 +207,8 @@ footer>ul::after{
 }
 footer ul{
   display: flex;
+  position: absolute;
+  left: 0
 }
 footer ul>li{
   float: left;
