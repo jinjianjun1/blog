@@ -195,7 +195,6 @@ var Fm={
     this.$container.find('.btn-play').removeClass('icon-play').addClass('icon-pause') //这样写的话刚开始按钮就是播放状态 感觉不太好
   },
   updateStatus(){
-    console.log('updata')
     var min =Math.floor(this.audio.currentTime/60)
     var second=Math.floor(this.audio.currentTime%60)+''
     second= second.length===2?second:'0'+second
