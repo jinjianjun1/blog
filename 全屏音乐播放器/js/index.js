@@ -36,7 +36,7 @@ var Footer={
       },400,function(){
         _this.isAnimate =false
         _this.isStart=false
-        console.log(parseFloat(_this.$ul.css('left')),parseFloat(_this.$ul.width()))
+        // console.log(parseFloat(_this.$ul.css('left')),parseFloat(_this.$ul.width()))
         if(parseFloat(_this.$box.width())-parseFloat(_this.$ul.css('left'))>=parseFloat(_this.$ul.width())){
           console.log('change')
           _this.isToEnd=true
@@ -73,7 +73,7 @@ var Footer={
   render(){
     var _this=this
     $.getJSON('https://jirenguapi.applinzi.com/fm/getChannels.php').done(function(ret){
-    console.log(ret) 
+    //console.log(ret) 
     _this.renderFooter(ret.channels)
     }).fail(function(){
       console.log('not get data')
@@ -117,7 +117,7 @@ var Fm={
       _this.channelName=channelObj.channelName
       _this.loadMusic()
     }) 
-      console.log(this) 
+      //console.log(this) 
      //console.log(this.$container)
     this.$container.find('.btn-play').on('click',function(){
      var $btn =$(this)
@@ -168,19 +168,19 @@ var Fm={
     $.getJSON('https://jirenguapi.applinzi.com/fm/getLyric.php',{sid:this.song.sid}).done(function(ret){
      var lyric =ret.lyric
      var lyricObj={}
-     console.log(lyric,'就是这里')
+     //console.log(lyric,'就是这里')
      lyric.split('\n').forEach(function(line){
-        var times= line.match(/\d{2}:\d{2}/g)
-        var str =line.replace(/\[.+?\]/g,'')
-        if(Array.isArray(times)){
+        var times= line.match(/\d{2}:\d{2}/g)//时间
+        var str =line.replace(/\[.+?\]/g,'')//与时间对应的歌词
+        if(Array.isArray(times)){//有的line不是数组，需加一个这个判断，不然执行下面会报错
           times.forEach(function(time){
-            lyricObj[time]=str
+            lyricObj[time]=str//变成key:value形式
           })
         }      
       })
     _this.lyricObj=lyricObj
-    console.log(_this,'44444')
-    console.log(_this.lyricObj,'5555555555')
+    //console.log(_this,'44444')
+    //console.log(_this.lyricObj,'5555555555')
     })
   },
   setMusic(){
@@ -192,7 +192,7 @@ var Fm={
     this.$container.find('.detail h1').text(this.song.title)
     this.$container.find('.detail .author').text(this.song.artist)
     this.$container.find('.tag').text(this.channelName)
-    this.$container.find('.btn-play').removeClass('icon-play').addClass('icon-pause') //这样写的话刚开始按钮就是播放状态 感觉不太好
+    this.$container.find('.btn-play').removeClass('icon-play').addClass('icon-pause') 
   },
   updateStatus(){
     var min =Math.floor(this.audio.currentTime/60)
@@ -202,9 +202,29 @@ var Fm={
     this.$container.find('.bar-progress').css('width',this.audio.currentTime/this.audio.duration*100+'%')  
     var line=this.lyricObj['0'+min+':'+second]
     if(line){
-      this.$container.find('.lyric p').text(line)
+      this.$container.find('.lyric p').text(line).boomText()
     }
   }
 }
+
+$.fn.boomText=function(type){
+  type = type || 'zoomIn'
+  this.html(function(){
+    var arr =$(this).text().split('').map(function(word){
+      return '<span class="boomText" style="display:inline-block">'+word+'</span>'
+    })
+    return arr.join('')
+  })
+  var index=0
+  var $boomTexts=$(this).find('span')
+  var clock=setInterval(function(){
+    $boomTexts.eq(index).addClass('animated '+type)//注意 这里要有空格
+    index++
+    if(index >=$boomTexts.length){
+      clearInterval(clock)
+    }
+  },300)
+}
+
 Footer.init()
 Fm.init()
