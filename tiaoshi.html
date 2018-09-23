@@ -262,7 +262,15 @@ for (var i = 0; i < 10; i ++) {
       $('.btn-contain .change').on('click',function(){
           $('.product').toggleClass('cover')
       })
+      String.prototype.reverse=function(){
+        var newstr=[]
+        for(var len=this.length,i=len;i>0;i--){
+        newStr.push(str[i])
+        } 
+        return newstr.join('')
+       }
       </script>
+      
     </body>
     </html>
 </frame>>

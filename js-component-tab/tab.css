@@ -1,0 +1,38 @@
+* {  margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+.tab-container{
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+}
+.tab-head .active{
+    color: crimson;
+}
+.tab-contain .active{
+    display: block
+}
+.tab-head{
+    height: 50px;   
+    text-align: center;
+    display: flex;
+}
+.tab-containe>ul::after{
+    content: '';
+    display: block;
+    clear: both
+}
+.tab-container>ul>li{
+    float: left;
+    border: 1px #ddd solid;
+    margin: 10px;
+    flex: 1;
+}
+.tab-contain li{
+    width: 800px;
+    height: 300px;
+    display: none;
+}
