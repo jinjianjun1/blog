@@ -23,4 +23,4 @@
 例 ：var tab =new Tab('.section')
     tab.init()
     即可激活
-
+[预览链接](https://jinjianjun1.github.io/blog/js-component-tab/sample.html)
