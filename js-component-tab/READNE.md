@@ -1,3 +1,5 @@
+[预览链接](https://jinjianjun1.github.io/blog/js-component-tab/sample.html)
+
 ## 组件功能
 可以进行页面下不同内容间的切换
 ##组件实现方式
@@ -23,4 +25,3 @@
 例 ：var tab =new Tab('.section')
     tab.init()
     即可激活
-[预览链接](https://jinjianjun1.github.io/blog/js-component-tab/sample.html)
