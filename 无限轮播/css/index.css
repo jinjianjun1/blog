@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.carousal{
+    position: relative;
+    width: 320px;
+    height: 180px;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.carousal ul,
+.carousal li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.carousal .img-ct{
+    position: absolute;
+    /*注意这里宽度不要写死，之后用JS来设置*/
+}
+.carousal .img-ct::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.carousal .img-ct>li{
+    float: left;
+}
+.carousal .img-ct img{
+    width: 320px;
+    height: 180px;
+}
+.carousal .arrow{
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    display: inline-block;/*因为箭头是a链接 ，a连接为行内元素，无法设置宽高*/  
+    width:30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+
+}
+.carousal .arrow:hover{
+    opacity: 0.5;
+}
+.carousal .pre{
+    left: 10px;
+}
+.carousal .next{
+    right: 10px;
+}
+.carousal .bullet{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    font-size: 0;
+    z-index: 1;
+    text-align: center
+}
+.carousal .bullet>li{
+    display: inline-block;
+    width: 30px;
+    height: 5px;
+    border: 1px solid #ccc;
+    margin: 5PX;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.carousal .bullet>li.active{
+    background-color: #ccc
+}
