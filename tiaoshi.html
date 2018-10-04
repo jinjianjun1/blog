@@ -269,6 +269,42 @@ for (var i = 0; i < 10; i ++) {
         } 
         return newstr.join('')
        }
+
+
+       function ajax(opts){
+          var url = opts.url
+          var type = opts.type || 'GET'
+          var dataType = opts.dataType || 'json'
+          var onsuccess = opts.onsuccess || function(){}
+          var onerror = opts.onerror || function(){}
+          var data = opts.data || {}
+
+          var dataStr = []
+          for(var key in data){
+              dataStr.push(key + '=' + data[key])
+          }
+          dataStr = dataStr.join('&')
+
+          if(type === 'GET'){
+              url += '?' + dataStr
+          }
+
+          return new Promise(function(resolve,reject){
+          var xhr = new XMLHttpRequest()
+          xhr.open(type, url, true)
+          if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304){
+           if(dataType === 'json'){
+             resolve(JSON.parse(xhr.responseText))
+           }else{
+             resolve(xhr.responseText)
+           }
+      
+          }else{
+            reject(new Error('somethig wrong'))
+          }
+
+    })        
+}
       </script>
       
     </body>
