@@ -1,0 +1,90 @@
+*{
+    margin: 0;padding: 0
+}
+ul,ol{
+    list-style: none;
+}
+
+body{
+    position: relative; 
+    overflow: hidden;
+}
+
+#canvas{
+  display: block;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.actions{
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.actions .iconfont{
+    transition: 0.3s
+}
+#pen,#eraser,#clear,#save{
+    font-size: 32px;
+    margin: 10px;
+}
+ .actions .iconfont.active{
+     display: inline-block;
+    color: red;
+    transform: scale(1.2)
+}
+.colors{
+    position: fixed;
+    top: 88px;
+    left: 32px;
+}
+.colors>li{
+    width: 20px;
+    height: 20px;
+    margin: 15px 0;
+    border-radius: 50%;
+    transition: all .3;
+}
+.colors>li.active{
+    box-shadow: 0 0 3px rgba(0,0,0,0.95);
+    transform: scale(1.2)
+}
+.colors>li.black{
+    background-color: black;
+}
+.colors>li.red{
+    background-color: red;
+}
+.colors>li.green{
+    background-color: green;
+}
+.colors>li.blue{
+    background-color: blue;
+}
+.sizes{
+    position: fixed;
+    right: 31px;
+    top: 26px;
+}
+.sizes>li{
+    margin: 10px 0 ;
+}
+.sizes>.thin{
+    height: 0;
+    width: 20px;
+    border-top: 3px solid black;
+}
+.sizes>.thick{
+    height: 0;
+    width: 20px;
+    border-top: 6px solid black;
+}
