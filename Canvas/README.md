@@ -73,4 +73,4 @@ touchstart
 touchmove
 touchend
 ```
-![预览链接](https://jinjianjun1.github.io/blog/Canvas/canvas.html)
+[预览链接](https://jinjianjun1.github.io/blog/Canvas/canvas.html)
