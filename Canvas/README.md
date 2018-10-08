@@ -1,6 +1,8 @@
-##Canvas画板
+## Canvas画板
+
 ![作品展示](https://upload-images.jianshu.io/upload_images/13167242-d9e8028fde9259fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-##功能介绍
+
+## 功能介绍
 
 - 支持触屏与非触屏设备使用
 - 画笔 粗/细 调节功能
@@ -8,7 +10,8 @@
 - 橡皮擦功能
 - 清空画布功能
 - 作品导出下载功能
-##技术要点
+
+## 技术要点
 使用了原生JavaScript和Canvas的API，采取了面向对象的方式编写代码
 - 用JS设置Canvas的大小，使之自适应大小
 ```
@@ -20,7 +23,7 @@ setWidthHeight:function(){
     },
 
 ```
-- 特性检测，PC端和移动端所需JS监听的事件不同，需要进行判断
+1. 特性检测，PC端和移动端所需JS监听的事件不同，需要进行判断
 ```
 if(document.body.ontouchstart !==undefined){
             this.mpbileManulate()
@@ -29,8 +32,8 @@ if(document.body.ontouchstart !==undefined){
         }//PC端没有touchstart事件
 
 ```
-- Canvas API
-1. 画线
+2. Canvas API
+- 画线
 ```
 function drawLine(x1 ,y1 ,x2 ,y2){
   context.beginPath()  //创建一个新的路径
@@ -42,8 +45,10 @@ function drawLine(x1 ,y1 ,x2 ,y2){
   context.closePath()  //将笔点返回到当前子路径起始点，搭配将新点赋值给旧点即可完成绘制线条的功能
 }
 ```
-![参考链接](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)
-2. 保存生成所画图画的方法
+![相关链接](https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API)
+
+
+- 保存生成所画图画的方法
 ```
 save.onclick = function(){
   var url = canvas.toDataURL("image/png")   //将当前图保存到一个url地址变量中
@@ -55,14 +60,14 @@ save.onclick = function(){
   a.click()
 }
 ```
-- 事件监听
-1. pc端
+3. 事件监听
+- pc端
 ```
 mousedown
 mousemove
 mouseup
 ```
-2. 移动端
+- 移动端
 ```
 touchstart
 touchmove
