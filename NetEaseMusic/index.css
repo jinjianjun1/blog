@@ -96,6 +96,9 @@ section>h2:first-child{
 
 
 .latestMusic{}
+.latestMusic p{
+    text-align: center;
+}
 .latestMusic>ol>li h3{
     font-size: 4.12vw;
     font-weight: normal;
@@ -115,6 +118,11 @@ section>h2:first-child{
     padding: 1vw;
     position: relative;
 }
+.latestMusic>ol>li a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .latestMusic>ol>li .icon{
   width: 5.9vw;
   height: 5.9vw;
@@ -162,5 +170,7 @@ section.art .copyright{
     font-size: 3.2vw;
     transform: scale(.75);
     text-align: center;
-    margin-bottom: 1vw
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    color:#888;
 }

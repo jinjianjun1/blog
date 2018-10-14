@@ -1,0 +1,63 @@
+[   
+    { 
+     "id":"1",     
+    "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/1.mp3",
+    "name":"Maps",
+    "singer":"Maroon5",
+    "album":"Maps"
+   },
+    {   "id":"2",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/2.mp3",
+        "name":"Shape Of You",
+        "singer":"Ed Sheeran",
+        "album":"Shape Of You"
+    },
+    {   "id":"3",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/3.mp3",
+        "name":"Beautiful In White",
+        "singer":"Shane Filan",
+        "album":"Beautiful In White"
+    },
+    {   "id":"4",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/4.mp3",
+        "name":"suger",
+        "singer":"Maroon5",
+        "album":"V"
+    },
+    {   "id":"5",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/5.mp3",
+        "name":"Uptown Funk",
+        "singer":"Bruno Mars",
+        "album":"Uptown Funk"
+    },
+    {   "id":"6",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/6.mp3",
+        "name":"模特",
+        "singer":"李荣浩",
+        "album":"模特"
+    },
+    {   "id":"7",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/7.mp3",
+        "name":" Fairy Tail",
+        "singer":"纯音乐",
+        "album":"妖精的尾巴"
+    },
+    {   "id":"8",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/8.mp3",
+        "name":"喜欢你",
+        "singer":"邓紫棋",
+        "album":"喜欢你" 
+    },
+    {   "id":"9",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/9.mp3",
+        "name":"难念的经",
+        "singer":"周华健",
+        "album":"电视剧歌曲大全" 
+    },
+    {   "id":"10",
+        "url":"https://project-music-1257821445.cos.ap-beijing.myqcloud.com/10.mp3",
+        "name":"I'll be there for you",
+        "singer":"The Rembrandts",
+        "album":"Friends"
+    }
+]
