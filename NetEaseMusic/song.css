@@ -101,6 +101,12 @@ background-size: cover;
     font-size: 14px;
     line-height: 24px;
 }
+.song-decription p.active{
+    color: white;
+}
+.song-decription .lines{
+    transition: transform .3s;
+}
 .song-decription .lyric{
     height: 72px;
     overflow:hidden;
