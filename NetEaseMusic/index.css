@@ -42,6 +42,7 @@ section>h2:first-child{
 .siteNav{
     
 }
+
 .siteNav>ol{
   display: flex;
   text-align: center;
@@ -65,6 +66,13 @@ section>h2:first-child{
     border-bottom: 2px solid #D33A31;
     left: -1vw;right: -1vw;
     bottom: 0;
+}
+
+.tabContent>li{
+    display: none;
+}
+.tabContent>li.active{
+    display: block;
 }
 
 .playlists{

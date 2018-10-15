@@ -28,6 +28,9 @@ background-size: cover;
     width: 8vw;
     fill: white;
 }
+.disc-container .disc{
+    position: relative;
+}
 .disc-container .icon-wraper{
     position: absolute; 
     z-index: 1;
@@ -38,12 +41,16 @@ background-size: cover;
     height: 15vw;
     width: 15vw;
     border-radius: 50%;
-    background: rgba(0, 0,0,0.5)
+    background: rgba(0, 0,0,0.5);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%)
 }
 .disc-container .pointer{
    width: 24vw;
    position: absolute;
    left: 46%;
+   z-index: 1;
 }
 
 
